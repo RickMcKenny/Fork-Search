@@ -8,13 +8,16 @@ int failCount = 0;
 
 int search(int *arr, int start, int end, int target, pid_t parent) 
 {
-	while(start < end) {
-	  if( arr[start] == target ) {
+	while(start < end) 
+	{
+	  if( arr[start] == target ) 
+	  {
 	    kill(parent, SIGUSR1);
 	    exit(0);
-	  } else {
-	   start++;
-	  }
+	  } else 
+	    {
+	    start++;
+	    }
 	}
 	kill(parent, SIGUSR2);
 	exit(1);
